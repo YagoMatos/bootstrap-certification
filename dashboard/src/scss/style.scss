@@ -1,0 +1,63 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/font-awesome/scss/font-awesome";
+
+.row{
+    @include make-row;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+}
+
+
+// sidebar
+@import "sidebar";
+
+//header
+@import "header"; 
+
+//card custom
+@import "card-custom";
+
+//badge custom
+@import "badge-custom";
+
+.coluna-menor,
+.coluna-maior {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.container{ width: 100% }
+
+@include media-breakpoint-up('sm'){
+    
+    .coluna-menor,
+    .coluna-maior {
+        padding: 0;
+    }
+
+    .coluna-menor{
+        @include make-col-project(4);
+    }
+    
+    .coluna-maior {
+        @include make-col-project(8);
+    }
+}
+
+
+@include media-breakpoint-up('lg'){
+	.container{
+		width: 85%;
+		margin-left: 190px;
+	}
+}
